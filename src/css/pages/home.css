@@ -1,0 +1,195 @@
+/* ========================================
+   Layer 6: Pages — Home
+   Section-specific styles for the showcase
+   ======================================== */
+
+/* Showcase block (HTML, CSS, Components) */
+.showcase-block {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.showcase-block__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+/* Showcase note (aside/note block) */
+.showcase-note {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  background-color: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.showcase-note__title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+/* ========================================
+   Constraint list (dl)
+   ======================================== */
+
+.constraint-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-1);
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .constraint-list {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.constraint-list__term {
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+.constraint-list__def {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  padding: var(--space-2) var(--space-3);
+}
+
+.constraint-list__def code {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: inherit;
+}
+
+@media (min-width: 640px) {
+  .constraint-list__term {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-base);
+  }
+
+  .constraint-list__def {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-base);
+  }
+}
+
+/* ========================================
+   Review steps (ol)
+   ======================================== */
+
+.review-steps {
+  list-style: decimal;
+  padding-left: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+.review-steps__item {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+  padding-left: var(--space-2);
+}
+
+.review-steps__item a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.review-steps__item a:hover {
+  color: var(--color-accent-hover);
+}
+
+.review-steps__item kbd {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  padding: 0.1em 0.3em;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+.footer {
+  background-color: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  padding-inline: var(--container-padding);
+  padding-block: var(--space-12) var(--space-8);
+  margin-top: var(--section-gap);
+}
+
+.footer__content {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .footer__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer__heading {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer__link {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer__link:hover {
+  color: var(--color-accent);
+}
+
+.footer__link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+.footer__copyright {
+  display: block;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  margin-top: var(--space-8);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+}
