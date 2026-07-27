@@ -1,0 +1,39 @@
+/* ========================================
+   Layer 7: Utilities
+   Single-purpose helper classes
+   ======================================== */
+
+/* Screen-reader only — visually hidden but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Skip link — hidden until focused */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-accent);
+  color: #ffffff;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  z-index: 500;
+  transform: translateY(-100%);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  position: fixed;
+  transform: translateY(0);
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
