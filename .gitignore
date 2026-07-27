@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Editor
+.vscode/
+.idea/
+*.sublime-*
+
+# Never ignore the project files — this is a pure HTML+CSS project

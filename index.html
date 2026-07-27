@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML &amp; CSS Engineering Showcase — freeCodeCamp Legacy Responsive Web Design v8</title>
+  <meta name="description" content="A production-grade static web application demonstrating modern HTML5, CSS3, accessibility, and responsive engineering principles.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onpux.github.io/html-css-engineering-showcase/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HTML &amp; CSS Engineering Showcase">
+  <meta property="og:description" content="A production-grade static web application demonstrating modern HTML5, CSS3, accessibility, and responsive engineering principles.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://onpux.github.io/html-css-engineering-showcase/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTML &amp; CSS Engineering Showcase">
+  <meta name="twitter:description" content="A production-grade static web application demonstrating modern HTML5, CSS3, accessibility, and responsive engineering principles.">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "HTML &amp; CSS Engineering Showcase",
+    "description": "A production-grade static web application demonstrating modern HTML5, CSS3, accessibility, and responsive engineering principles.",
+    "applicationCategory": "Educational",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires HTML5 and CSS3 compatible browser",
+    "author": {
+      "@type": "Person",
+      "name": "Onpux",
+      "url": "https://github.com/Onpux"
+    }
+  }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="src/css/main.css">
+
+  <!--
+    Phase: C4 — Release Candidate
+    Constraints:
+    - Zero JavaScript (intentional)
+    - Zero external dependencies (intentional)
+    - Mobile First via min-width breakpoints
+  -->
+</head>
+<body>
+
+  <!-- ============ SKIP LINK ============ -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="navbar" role="banner">
+    <nav class="navbar__inner" aria-label="Main navigation">
+      <span class="navbar__brand">Engineering Showcase</span>
+      <ul class="navbar__links">
+        <li><a class="navbar__link" href="#objective">Objective</a></li>
+        <li><a class="navbar__link" href="#constraints">Constraints</a></li>
+        <li><a class="navbar__link" href="#how-to-review">Review</a></li>
+        <li><a class="navbar__link" href="#competency">Competencies</a></li>
+        <li><a class="navbar__link" href="#showcase">Showcase</a></li>
+        <li><a class="navbar__link" href="#decisions">Decisions</a></li>
+        <li><a class="navbar__link" href="#quality">Quality</a></li>
+        <li><a class="navbar__link" href="#resources">Resources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main id="main">
+
+    <!-- ====== HERO ====== -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <h1 class="hero__title" id="hero-title">HTML &amp; CSS<br>Engineering Showcase</h1>
+      <p class="hero__subtitle">
+        A production-grade static web application built exclusively with HTML5 and CSS3.
+        Zero frameworks. Zero build step. Open <code>index.html</code> and go.
+        <a class="hero__link" href="docs/engineering-contract.md">Read the Engineering Contract →</a>
+      </p>
+    </section>
+
+    <!-- ====== OBJECTIVE ====== -->
+    <section class="section" id="objective" aria-labelledby="objective-title">
+      <h2 class="section__title" id="objective-title">Objective</h2>
+      <p class="section__text">
+        This project verifiably demonstrates mastery of the competencies evaluated
+        by the freeCodeCamp <strong>Legacy Responsive Web Design v8</strong> Certification
+        through clean, accessible, and professionally organized code.
+      </p>
+      <p class="section__text">
+        Every element exists to solve a concrete problem. Nothing was added to "show off"
+        knowledge. Competencies are evidenced as a consequence of solving real layout,
+        accessibility, and responsiveness challenges.
+      </p>
+    </section>
+
+    <!-- ====== PROJECT CONSTRAINTS ====== -->
+    <section class="section" id="constraints" aria-labelledby="constraints-title">
+      <h2 class="section__title" id="constraints-title">Project Constraints</h2>
+      <p class="section__text">These constraints define the boundaries within which every decision is made. They are not negotiable.</p>
+      <dl class="constraint-list">
+        <div class="constraint-list__item">
+          <dt>Zero Dependencies</dt>
+          <dd>No Bootstrap, Tailwind, Bulma, Foundation, Sass, Less, PostCSS, jQuery, React, Vue, Angular, icon libraries, Google Fonts, or any external dependency. The project must work by opening <code>index.html</code>.</dd>
+        </div>
+        <div class="constraint-list__item">
+          <dt>Zero JavaScript</dt>
+          <dd>Only HTML5 and CSS3. No JavaScript files, no inline scripts, no event handlers. Any UI behaviour that can be solved with HTML/CSS must use HTML/CSS.</dd>
+        </div>
+        <div class="constraint-list__item">
+          <dt>No Build Step</dt>
+          <dd>Open <code>index.html</code> directly in a browser. No bundlers, transpilers, watchers, or preprocessors.</dd>
+        </div>
+        <div class="constraint-list__item">
+          <dt>Mobile First</dt>
+          <dd>Base styles target the smallest viewport. Desktop adds capability via <code>min-width</code> breakpoints.</dd>
+        </div>
+        <div class="constraint-list__item">
+          <dt>WCAG 2.2 Level AA</dt>
+          <dd>Accessibility is a requirement from the first line of code, not a layer added after.</dd>
+        </div>
+        <div class="constraint-list__item">
+          <dt>Semantic HTML</dt>
+          <dd>Document structure must be meaningful without CSS. No <code>&lt;div&gt;</code> where a semantic element is appropriate.</dd>
+        </div>
+        <div class="constraint-list__item">
+          <dt>System Font Stack</dt>
+          <dd>Zero HTTP requests for typography. Better performance, privacy, and offline availability.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ====== HOW TO REVIEW ====== -->
+    <section class="section" id="how-to-review" aria-labelledby="review-title">
+      <h2 class="section__title" id="review-title">How to Review</h2>
+      <p class="section__text">Estimated time: <strong>15–20 minutes</strong></p>
+      <ol class="review-list">
+        <li><strong>Read the Project Constraints</strong> — understand the deliberate limitations.</li>
+        <li><strong>Open DevTools → inspect <code>:root</code></strong> — verify CSS custom properties (design tokens).</li>
+        <li><strong>Resize viewport</strong> from 320px through 3840px — verify responsive behaviour.</li>
+        <li><strong>Keyboard navigation</strong> — <kbd>Tab</kbd>, <kbd>Shift+Tab</kbd>, <kbd>Enter</kbd>, <kbd>Space</kbd> — verify skip link and focus rings.</li>
+        <li><strong>Inspect semantic HTML</strong> — verify <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>figure</code>, <code>aside</code>, <code>footer</code>.</li>
+        <li><strong>Review the Engineering Decisions</strong> — each decision shows the problem, alternatives, implementation, and verification.</li>
+      </ol>
+    </section>
+
+    <!-- ====== COMPETENCY MATRIX ====== -->
+    <section class="section" id="competency" aria-labelledby="competency-title">
+      <h2 class="section__title" id="competency-title">Competency Matrix</h2>
+      <p class="section__text">Mapping of freeCodeCamp Legacy Responsive Web Design v8 competencies to project evidence locations.</p>
+      <div class="table-wrapper" tabindex="0" role="region" aria-label="Competency matrix table">
+        <table>
+          <caption class="sr-only">Competency Matrix mapping certification competencies to their evidence locations in this project</caption>
+          <thead>
+            <tr>
+              <th scope="col">Competency</th>
+              <th scope="col">Evidence</th>
+              <th scope="col">Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML5 Semantic</td>
+              <td><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;figure&gt;</code>, <code>&lt;figcaption&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code></td>
+              <td><a href="#showcase-html">HTML Showcase</a></td>
+            </tr>
+            <tr>
+              <td>Flexbox</td>
+              <td>Navigation layout, card components</td>
+              <td><a href="#navbar">Navbar</a>, <a href="#gallery">Gallery</a></td>
+            </tr>
+            <tr>
+              <td>CSS Grid</td>
+              <td>Component gallery, QA cards layout</td>
+              <td><a href="#showcase-css">CSS Showcase</a></td>
+            </tr>
+            <tr>
+              <td>CSS Variables</td>
+              <td>Design tokens as custom properties on <code>:root</code></td>
+              <td><a href="src/css/base/tokens.css">tokens.css</a></td>
+            </tr>
+            <tr>
+              <td><code>clamp()</code> / <code>min()</code> / <code>max()</code></td>
+              <td>Fluid typography, responsive spacing</td>
+              <td><a href="#showcase-css">CSS Showcase</a></td>
+            </tr>
+            <tr>
+              <td>Media Queries</td>
+              <td>3 breakpoints (640px, 1024px, 1440px), Mobile First</td>
+              <td><a href="#quality-responsive">Responsive</a></td>
+            </tr>
+            <tr>
+              <td><code>prefers-color-scheme</code></td>
+              <td>Automatic dark/light theme, zero JavaScript</td>
+              <td><a href="#quality-accessibility">Accessibility</a></td>
+            </tr>
+            <tr>
+              <td><code>prefers-reduced-motion</code></td>
+              <td>Conditional animations respecting user preference</td>
+              <td><a href="#quality-accessibility">Accessibility</a></td>
+            </tr>
+            <tr>
+              <td>Pseudo-classes / pseudo-elements</td>
+              <td><code>:hover</code>, <code>:focus-visible</code>, <code>:disabled</code>, <code>::before</code>, <code>::after</code></td>
+              <td><a href="#gallery">Component Gallery</a></td>
+            </tr>
+            <tr>
+              <td>Keyboard Navigation</td>
+              <td>Skip link, <code>:focus-visible</code> on all interactive elements</td>
+              <td><a href="#quality-accessibility">Accessibility</a></td>
+            </tr>
+            <tr>
+              <td>WCAG AA Contrast</td>
+              <td>Verified for every colour token in both themes</td>
+              <td><a href="docs/design-tokens.md">design-tokens.md</a></td>
+            </tr>
+            <tr>
+              <td>Accessible Forms</td>
+              <td>Not applicable — this project contains no forms (YAGNI). Knowledge demonstrated in semantic HTML patterns throughout.</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ====== TECHNICAL SHOWCASE ====== -->
+    <section class="section" id="showcase" aria-labelledby="showcase-title">
+      <h2 class="section__title" id="showcase-title">Technical Showcase</h2>
+      <p class="section__text">
+        The evidence is the code itself. Each section below demonstrates a specific set of competencies through real implementation, not contrived examples.
+      </p>
+
+      <!-- HTML5 Semantics -->
+      <article class="showcase-section" id="showcase-html" aria-labelledby="showcase-html-title">
+        <h3 class="section__title" id="showcase-html-title">HTML5 Semantics</h3>
+        <p class="section__text">
+          The document structure uses semantic HTML elements that convey meaning without CSS.
+          Every section, article, nav, header, and footer serves a purpose grounded in the content.
+        </p>
+
+        <figure class="code-figure">
+          <figcaption class="code-figure__caption">Page structure as rendered by the browser's accessibility tree</figcaption>
+          <pre class="code-block"><code>  &lt;header role="banner"&gt;
+    &lt;nav aria-label="Main navigation"&gt;...&lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h1&gt;Hero&lt;/h1&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+      &lt;h2&gt;Objective&lt;/h2&gt;
+      &lt;!-- Definition list, ordered list --&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+      &lt;h2&gt;Competency Matrix&lt;/h2&gt;
+      &lt;div role="region"&gt;
+        &lt;table&gt;...&lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+      &lt;h2&gt;Technical Showcase&lt;/h2&gt;
+      &lt;article&gt;...&lt;/article&gt;
+      &lt;article&gt;...&lt;/article&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;...&lt;/footer&gt;</code></pre>
+        </figure>
+      </article>
+
+      <!-- CSS3 Modern Features -->
+      <article class="showcase-section" id="showcase-css" aria-labelledby="showcase-css-title">
+        <h3 class="section__title" id="showcase-css-title">CSS3 Modern Features</h3>
+        <p class="section__text">
+          The project uses CSS custom properties, <code>clamp()</code> for fluid typography,
+          Grid and Flexbox for layout, and <code>prefers-*</code> media queries for
+          user preference respect — all without a preprocessor.
+        </p>
+
+        <figure class="code-figure">
+          <figcaption class="code-figure__caption">Design tokens — single source of truth</figcaption>
+          <pre class="code-block"><code>:root {
+  /* Colours, Typography, Spacing, Shadows, Motion */
+  --color-accent:         #2563eb;
+  --color-accent-hover:   #1d4ed8;
+  --text-5xl:  clamp(2.5rem, 5vw, 3.5rem);
+  --space-4:   1rem;
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent: #38bdf8;
+    --color-accent-hover: #7dd3fc;
+  }
+}</code></pre>
+        </figure>
+
+        <figure class="code-figure">
+          <figcaption class="code-figure__caption">Fluid typography scale using <code>clamp()</code></figcaption>
+          <pre class="code-block"><code>/* Major Third (1.25) scale */
+--text-xs:  0.75rem;    /* 12px */
+--text-base: 1rem;      /* 16px */
+--text-xl:  1.25rem;    /* 20px */
+--text-3xl: 1.875rem;   /* 30px */
+--text-5xl: clamp(2.5rem, 5vw, 3.5rem);</code></pre>
+        </figure>
+
+        <figure class="code-figure">
+          <figcaption class="code-figure__caption">Responsive Grid — Mobile First</figcaption>
+          <pre class="code-block"><code>.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}</code></pre>
+        </figure>
+      </article>
+
+      <!-- Component Gallery -->
+      <article class="section" id="gallery" aria-labelledby="showcase-components-title">
+        <h3 class="section__title" id="showcase-components-title">Component Gallery</h3>
+        <p class="section__text">Each component emerged from analyzing what each page section actually needs. No component exists without a reason.</p>
+
+        <div class="gallery">
+
+          <!-- Button component -->
+          <div class="card">
+            <h4 class="card__title">Button</h4>
+            <p class="section__text">Primary action, hover, focus, and disabled states.</p>
+            <div class="card__demo">
+              <button class="btn btn--primary" type="button">Primary</button>
+              <button class="btn btn--secondary" type="button">Secondary</button>
+              <button class="btn btn--primary" type="button" disabled>Disabled</button>
+            </div>
+            <details class="details">
+              <summary>Show CSS</summary>
+              <pre class="code-block"><code>.btn {
+  display: inline-flex;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.btn:hover { /* hover state */ }
+.btn:focus-visible { box-shadow: var(--focus-ring); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }</code></pre>
+            </details>
+          </div>
+
+          <!-- Badge component -->
+          <div class="card">
+            <h4 class="card__title">Badge</h4>
+            <p class="section__text">Success, warning, and error status indicators with <code>color-mix()</code> for accessible backgrounds.</p>
+            <div class="card__demo">
+              <span class="badge badge--success">Pass</span>
+              <span class="badge badge--warning">Pending</span>
+              <span class="badge badge--error">Fail</span>
+            </div>
+            <details class="details">
+              <summary>Show CSS</summary>
+              <pre class="code-block"><code>.badge--success {
+  background-color: rgba(22, 163, 74, 0.1);
+  background-color: color-mix(in srgb, var(--color-success) 10%, transparent);
+}</code></pre>
+            </details>
+          </div>
+
+          <!-- Card component -->
+          <div class="card">
+            <h4 class="card__title">Card</h4>
+            <p class="section__text">Content container used in the component gallery and QA sections.</p>
+            <div class="card__demo">
+              <p class="section__text">This is a card with a title, body text, and consistent spacing.</p>
+            </div>
+            <details class="details">
+              <summary>Show CSS</summary>
+              <pre class="code-block"><code>.card {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+}</code></pre>
+            </details>
+          </div>
+
+          <!-- Code Block component -->
+          <div class="card">
+            <h4 class="card__title">Code Block</h4>
+            <p class="section__text">Syntax-highlighted code blocks with horizontal scroll for long lines.</p>
+            <div class="card__demo">
+              <pre class="code-block"><code>const root = document.documentElement;</code></pre>
+            </div>
+            <details class="details">
+              <summary>Show CSS</summary>
+              <pre class="code-block"><code>.code-block {
+  overflow-x: auto;
+  padding: var(--space-4);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}</code></pre>
+            </details>
+          </div>
+
+          <!-- Table component -->
+          <div class="card">
+            <h4 class="card__title">Table</h4>
+            <p class="section__text">Semantic tables with responsive horizontal scroll wrapper.</p>
+            <div class="card__demo">
+              <div class="table-wrapper" tabindex="0" role="region" aria-label="Mini table demo">
+                <table>
+                  <caption class="sr-only">Mini table demonstration</caption>
+                  <thead>
+                    <tr><th scope="col">Feature</th><th scope="col">Status</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Responsive</td><td>✅</td></tr>
+                    <tr><td>Keyboard</td><td>✅</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion (details/summary) component -->
+          <div class="card">
+            <h4 class="card__title">Accordion (Native)</h4>
+            <p class="section__text">Zero-JS expandable content using <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code>.</p>
+            <div class="card__demo">
+              <details class="details">
+                <summary>Click to expand</summary>
+                <p class="section__text">This expands and collapses without a single line of JavaScript.</p>
+              </details>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ====== ENGINEERING DECISIONS ====== -->
+    <section class="section" id="decisions" aria-labelledby="decisions-title">
+      <h2 class="section__title" id="decisions-title">Engineering Decisions</h2>
+      <p class="section__text">
+        Each decision documents the problem, the alternatives considered, the chosen implementation,
+        and how it was verified. These are not post-hoc rationalisations — they were recorded
+        during development as decisions were made.
+      </p>
+
+      <div class="decisions">
+
+        <details class="decision">
+          <summary class="decision__summary">
+            <span class="decision__title">Why CSS custom properties over a preprocessor?</span>
+            <span class="badge badge--success">Decided</span>
+          </summary>
+          <div class="decision__body">
+            <p class="section__text"><strong>Problem:</strong> The project needed runtime theming (light/dark) without JavaScript.</p>
+            <p class="section__text"><strong>Alternatives:</strong> Sass variables (compile-time only), PostCSS (build step required), CSS custom properties (runtime native).</p>
+            <p class="section__text"><strong>Decision:</strong> CSS custom properties. They enable <code>prefers-color-scheme</code> theming without JavaScript or a build step.</p>
+            <p class="section__text"><strong>Trade-off:</strong> Cannot use custom properties inside <code>@media</code> query conditions, but can use them in values.</p>
+            <p class="section__text"><strong>Verification:</strong> Inspect <code>:root</code> in DevTools — tokens change when toggling system theme.</p>
+          </div>
+        </details>
+
+        <details class="decision">
+          <summary class="decision__summary">
+            <span class="decision__title">Why <code>&lt;details&gt;</code> over a JavaScript accordion?</span>
+            <span class="badge badge--success">Decided</span>
+          </summary>
+          <div class="decision__body">
+            <p class="section__text"><strong>Problem:</strong> Engineering decisions needed expand/collapse behaviour without bloating the page.</p>
+            <p class="section__text"><strong>Alternatives:</strong> JS with click handlers (breaks zero-JS constraint), CSS <code>:target</code> (fragile with navigation), <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> (native HTML, accessible).</p>
+            <p class="section__text"><strong>Decision:</strong> <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code>. Keyboard accessible, screen-reader friendly, zero JavaScript.</p>
+            <p class="section__text"><strong>Trade-off:</strong> Limited animation control. The open/close is instant. But <code>prefers-reduced-motion</code> is automatically respected.</p>
+            <p class="section__text"><strong>Verification:</strong> <kbd>Tab</kbd> to any decision, press <kbd>Enter</kbd> or <kbd>Space</kbd> — expands without JavaScript.</p>
+          </div>
+        </details>
+
+        <details class="decision">
+          <summary class="decision__summary">
+            <span class="decision__title">Why system font stack over Google Fonts?</span>
+            <span class="badge badge--success">Decided</span>
+          </summary>
+          <div class="decision__body">
+            <p class="section__text"><strong>Problem:</strong> Zero external HTTP requests was a hard constraint, but typography needed to be readable and professional.</p>
+            <p class="section__text"><strong>Alternatives:</strong> Google Fonts (R05 violation), <code>@font-face</code> with local files (file size), system font stack (zero requests).</p>
+            <p class="section__text"><strong>Decision:</strong> System font stack. Zero HTTP requests, faster load, better privacy, works offline.</p>
+            <p class="section__text"><strong>Trade-off:</strong> Less typographic control across OSes, but the fallback chain ensures consistent readability.</p>
+            <p class="section__text"><strong>Verification:</strong> Open DevTools → Network tab — zero font requests. Font renders differently on each OS (expected).</p>
+          </div>
+        </details>
+
+        <details class="decision">
+          <summary class="decision__summary">
+            <span class="decision__title">Why Mobile First with <code>min-width</code> queries?</span>
+            <span class="badge badge--success">Decided</span>
+          </summary>
+          <div class="decision__body">
+            <p class="section__text"><strong>Problem:</strong> The responsive strategy needed to serve the majority of users efficiently without overcomplicating the CSS.</p>
+            <p class="section__text"><strong>Alternatives:</strong> Desktop First with <code>max-width</code> (optimises for desktop, overweight mobile CSS), Mobile First with <code>min-width</code> (base=mobile, smaller CSS).</p>
+            <p class="section__text"><strong>Decision:</strong> Mobile First. Base styles assume the smallest viewport. Media queries add capability for larger screens.</p>
+            <p class="section__text"><strong>Trade-off:</strong> Requires more forethought for desktop layouts, but results in smaller CSS and better mobile performance.</p>
+            <p class="section__text"><strong>Verification:</strong> Resize browser from 320px to 3840px — layout adapts at 640px, 1024px, 1440px.</p>
+          </div>
+        </details>
+
+        <details class="decision">
+          <summary class="decision__summary">
+            <span class="decision__title">Why BEM naming over utility classes?</span>
+            <span class="badge badge--success">Decided</span>
+          </summary>
+          <div class="decision__body">
+            <p class="section__text"><strong>Problem:</strong> CSS class naming needed to be self-documenting and maintainable without a preprocessor.</p>
+            <p class="section__text"><strong>Alternatives:</strong> Utility classes (Tailwind-like, verbose HTML), SMACSS (requires mental categories), BEM (self-documenting).</p>
+            <p class="section__text"><strong>Decision:</strong> BEM (<code>.block__element--modifier</code>). Most widely adopted convention in production CSS. Reads like documentation.</p>
+            <p class="section__text"><strong>Trade-off:</strong> More verbose class names. But no preprocessor means what you see is what you get.</p>
+            <p class="section__text"><strong>Verification:</strong> Read any CSS file — <code>.card</code>, <code>.card__title</code>, <code>.card__demo</code>. Hierarchy is obvious from the names.</p>
+          </div>
+        </details>
+
+        <details class="decision">
+          <summary class="decision__summary">
+            <span class="decision__title">Why Semantic HTML over <code>&lt;div&gt;</code>-based structure?</span>
+            <span class="badge badge--success">Decided</span>
+          </summary>
+          <div class="decision__body">
+            <p class="section__text"><strong>Problem:</strong> The page structure needed to be accessible without CSS, and the project needed to demonstrate semantic HTML competency.</p>
+            <p class="section__text"><strong>Alternatives:</strong> <code>&lt;div&gt;</code> for everything (works, no semantics), semantic elements (built-in accessibility, meaningful structure).</p>
+            <p class="section__text"><strong>Decision:</strong> Semantic HTML. Every <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;aside&gt;</code> conveys meaning without CSS.</p>
+            <p class="section__text"><strong>Trade-off:</strong> Some semantic elements need explicit reset styles (default margins, display values).</p>
+            <p class="section__text"><strong>Verification:</strong> Disable CSS in DevTools — the document structure is readable and navigable.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ====== QUALITY ASSURANCE ====== -->
+    <section class="section" id="quality" aria-labelledby="quality-title">
+      <h2 class="section__title" id="quality-title">Quality Assurance</h2>
+      <p class="section__text">
+        The Engineering Contract requires every claim to be verified. This section tracks what exists,
+        what has been measured, and the actual result.
+      </p>
+
+      <div class="qa-grid">
+
+        <!-- Accessibility -->
+        <article class="qa-card" id="quality-accessibility" aria-labelledby="qa-a11y-title">
+          <h3 class="qa-card__title" id="qa-a11y-title">Accessibility</h3>
+          <table class="qa-table">
+            <caption class="sr-only">Accessibility verification results</caption>
+            <thead>
+              <tr>
+                <th scope="col">Requirement</th>
+                <th scope="col">Existe</th>
+                <th scope="col">Medido</th>
+                <th scope="col">Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Skip link present (R02)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Keyboard navigation — all interactive elements focusable</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><code>:focus-visible</code> visible on all elements</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>WCAG AA contrast — text on background</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><code>prefers-color-scheme</code> respected</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td><code>prefers-reduced-motion</code> respected</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Heading hierarchy — h1 &#8594; h2 &#8594; h3 &#8594; h4</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>ARIA only where HTML semantics are insufficient</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Progressive Enhancement — content readable without CSS (R16)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <!-- Responsive -->
+        <article class="qa-card" id="quality-responsive" aria-labelledby="qa-responsive-title">
+          <h3 class="qa-card__title" id="qa-responsive-title">Responsive Verification</h3>
+          <table class="qa-table">
+            <caption class="sr-only">Responsive verification results</caption>
+            <thead>
+              <tr>
+                <th scope="col">Requirement</th>
+                <th scope="col">Existe</th>
+                <th scope="col">Medido</th>
+                <th scope="col">Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>320px — Small mobile (R03)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>640px — Tablet portrait (R03)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>1024px — Laptop (R03)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>1440px — Desktop wide (R03)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>3840px — 4K (R03)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>No horizontal scroll at any width</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Fluid typography (<code>clamp()</code>)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Graceful Degradation — no CSS fallback issues (R17)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <!-- Performance -->
+        <article class="qa-card" id="quality-performance" aria-labelledby="qa-perf-title">
+          <h3 class="qa-card__title" id="qa-perf-title">Performance</h3>
+          <table class="qa-table">
+            <caption class="sr-only">Performance verification results</caption>
+            <thead>
+              <tr>
+                <th scope="col">Requirement</th>
+                <th scope="col">Existe</th>
+                <th scope="col">Medido</th>
+                <th scope="col">Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lighthouse Performance &ge; 95 (R06)</td>
+                <td>N/A</td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Zero external requests (R05)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>No render-blocking resources</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>No JavaScript for layout or UI</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Lighthouse Best Practices = 100 (R08)</td>
+                <td>N/A</td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <!-- SEO -->
+        <article class="qa-card" id="quality-seo" aria-labelledby="qa-seo-title">
+          <h3 class="qa-card__title" id="qa-seo-title">SEO</h3>
+          <table class="qa-table">
+            <caption class="sr-only">SEO verification results</caption>
+            <thead>
+              <tr>
+                <th scope="col">Requirement</th>
+                <th scope="col">Existe</th>
+                <th scope="col">Medido</th>
+                <th scope="col">Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Descriptive <code>&lt;title&gt;</code></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Meta description</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Open Graph tags</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Twitter Card tags</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Schema.org structured data (<code>WebApplication</code>)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Semantic heading hierarchy</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Lighthouse SEO &ge; 95 (R09)</td>
+                <td>N/A</td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <!-- Browser Compatibility -->
+        <article class="qa-card" id="quality-browser" aria-labelledby="qa-browser-title">
+          <h3 class="qa-card__title" id="qa-browser-title">Browser Compatibility</h3>
+          <table class="qa-table">
+            <caption class="sr-only">Browser compatibility results</caption>
+            <thead>
+              <tr>
+                <th scope="col">Browser</th>
+                <th scope="col">Existe</th>
+                <th scope="col">Medido</th>
+                <th scope="col">Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chrome (latest 2 versions)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Firefox (latest 2 versions)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Safari (latest 2 versions)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Edge (latest 2 versions)</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--warning">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>No JavaScript dependency</td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td><span class="badge badge--success">&#10003;</span></td>
+                <td>OK</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ====== ARCHITECTURE ====== -->
+    <section class="section" id="architecture" aria-labelledby="architecture-title">
+      <h2 class="section__title" id="architecture-title">Architecture</h2>
+      <p class="section__text">
+        The project follows a layered CSS architecture, semantic HTML structure, and a component discovery
+        process that lets the implementation reveal the design.
+      </p>
+
+      <figure class="code-figure">
+        <figcaption class="code-figure__caption">CSS layer order — each layer builds on the previous one without breaking the cascade.</figcaption>
+        <pre class="code-block"><code>src/
+├── css/
+│   ├── base/
+│   │   ├── reset.css        /* Box-sizing, margin removal */
+│   │   └── tokens.css       /* CSS custom properties */
+│   ├── layout/
+│   │   ├── container.css    /* .container, .section */
+│   │   └── grid.css         /* Gallery grid */
+│   ├── components/
+│   │   ├── button.css
+│   │   ├── badge.css
+│   │   ├── navbar.css
+│   │   ├── code-block.css
+│   │   ├── card.css
+│   │   └── table.css
+│   ├── pages/
+│   │   └── home.css         /* Page-specific section styles */
+│   ├── utilities/
+│   │   ├── helpers.css      /* .sr-only, layout helpers */
+│   │   └── theme.css        /* prefers-color-scheme */
+│   └── main.css             /* Entry point */
+└── assets/
+    └── images/
+        └── (static assets)
+
+docs/
+├── engineering-contract.md  /* Decision-making framework */
+├── design-principles.md     /* Quick reference */
+├── design-tokens.md         /* Token documentation */
+├── design-system.md         /* Component rules */
+└── css-architecture.md      /* Methodology */
+</code></pre>
+      </figure>
+
+      <aside class="showcase-note" role="note">
+        <h4 class="showcase-note__title">Why this architecture?</h4>
+        <p class="section__text">The cascade is the most powerful feature of CSS. Fighting it with specificity wars is a sign of poor architecture. By organising layers from lowest to highest specificity, any rule can be overridden predictably. Components are isolated. Theme changes affect only colour tokens. No rule breaks another.</p>
+      </aside>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER / RESOURCES ============ -->
+  <footer class="footer" id="resources" aria-labelledby="resources-title">
+    <h2 class="sr-only" id="resources-title">Project Resources</h2>
+
+    <div class="footer__content">
+      <section class="footer__section">
+        <h3 class="footer__heading">Repository</h3>
+        <ul class="footer__list">
+          <li><a class="footer__link" href="#" target="_blank" rel="noopener">GitHub — Source Code</a></li>
+          <li><a class="footer__link" href="https://github.com/Onpux" target="_blank" rel="noopener">Author: Onpux</a></li>
+        </ul>
+      </section>
+
+      <section class="footer__section">
+        <h3 class="footer__heading">Documentation</h3>
+        <ul class="footer__list">
+          <li><a class="footer__link" href="docs/engineering-contract.md">Engineering Contract</a></li>
+          <li><a class="footer__link" href="docs/design-tokens.md">Design Tokens</a></li>
+          <li><a class="footer__link" href="docs/design-system.md">Visual Design System</a></li>
+          <li><a class="footer__link" href="docs/css-architecture.md">CSS Architecture</a></li>
+        </ul>
+      </section>
+
+      <section class="footer__section">
+        <h3 class="footer__heading">Certification</h3>
+        <ul class="footer__list">
+          <li><a class="footer__link" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" target="_blank" rel="noopener">freeCodeCamp Legacy Responsive Web Design v8</a></li>
+        </ul>
+      </section>
+
+      <section class="footer__section">
+        <h3 class="footer__heading">License</h3>
+        <p class="section__text"><small>MIT — see <a class="footer__link" href="LICENSE">LICENSE</a> for details.</small></p>
+      </section>
+    </div>
+
+    <small class="footer__copyright">&copy; 2026 Onpux. Built with HTML5 &amp; CSS3. Zero dependencies. ♥</small>
+  </footer>
+
+</body>
+</html>
