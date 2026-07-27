@@ -1,0 +1,57 @@
+/* ========================================
+   Layer 8: Theme
+   prefers-color-scheme and prefers-reduced-motion
+   Always the last CSS layer
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-primary:     #0f172a;
+    --color-bg-secondary:   #1e293b;
+    --color-bg-surface:     #334155;
+    --color-text-primary:   #f1f5f9;
+    --color-text-secondary: #94a3b8;
+    --color-text-muted:     #64748b;
+    --color-accent:         #38bdf8;
+    --color-accent-hover:   #7dd3fc;
+    --color-success:        #22c55e;
+    --color-warning:        #fbbf24;
+    --color-error:          #f87171;
+    --color-border:         #475569;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Graceful degradation: rgba() fallback before color-mix() */
+  .badge--success {
+    background-color: rgba(34, 197, 94, 0.15);
+    background-color: color-mix(in srgb, var(--color-success) 15%, transparent);
+  }
+  .badge--warning {
+    background-color: rgba(251, 191, 36, 0.15);
+    background-color: color-mix(in srgb, var(--color-warning) 15%, transparent);
+  }
+  .badge--error {
+    background-color: rgba(248, 113, 113, 0.15);
+    background-color: color-mix(in srgb, var(--color-error) 15%, transparent);
+  }
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .btn:active {
+    transform: none;
+  }
+}
