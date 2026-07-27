@@ -1,0 +1,81 @@
+/* ========================================
+   Layer 3: Layout — Container
+   Section and container structure
+   ======================================== */
+
+.section {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  padding-block: var(--section-gap);
+}
+
+.section__title {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-4);
+  color: var(--color-text-primary);
+}
+
+.section__text {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+  max-width: 65ch;
+}
+
+.section__text strong {
+  color: var(--color-text-primary);
+  font-weight: var(--weight-semibold);
+}
+
+/* Hero — first section, no top padding */
+.hero {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  padding-block: clamp(4rem, 8vw, 8rem) var(--section-gap);
+}
+
+.hero__title {
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+  color: var(--color-text-primary);
+}
+
+.hero__subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 65ch;
+}
+
+.hero__link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hero__link:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ========================================
+   Layer 3: Layout — Table wrapper
+   For responsive tables on small viewports
+   ======================================== */
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-block: var(--space-6);
+}
+
+.table-wrapper:focus-visible {
+  outline: none;
+}
+
+.table-wrapper:focus-within {
+  box-shadow: var(--focus-ring);
+}
