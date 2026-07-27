@@ -1,0 +1,44 @@
+/* ========================================
+   Layer 3: Layout — Grid
+   Gallery layout for Component Gallery
+   ======================================== */
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 640px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ========================================
+   QA grid — QA cards layout
+   ======================================== */
+
+.qa-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .qa-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .qa-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
