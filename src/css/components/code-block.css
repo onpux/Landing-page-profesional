@@ -1,0 +1,60 @@
+/* ========================================
+   Component: Code Block
+   pre > code structure for code display
+   ======================================== */
+
+.code-block {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  tab-size: 2;
+}
+
+.code-block:focus-within {
+  box-shadow: var(--focus-ring);
+}
+
+.code-block code {
+  font-family: var(--font-mono);
+  color: var(--color-text-primary);
+}
+
+/* Figure wrapping a code block */
+.code-figure {
+  margin-block: var(--space-6);
+}
+
+.code-figure__caption {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid var(--color-accent);
+  background-color: var(--color-bg-surface);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.code-figure__caption code {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: var(--text-xs);
+}
+
+/* Inline code */
+p code,
+li code,
+dt code,
+dd code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  color: var(--color-accent);
+  background-color: var(--color-bg-surface);
+  padding: 0.1em 0.3em;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}

@@ -1,0 +1,65 @@
+/* ========================================
+   Component: Table
+   For the Competency Matrix and QA tables
+   ======================================== */
+
+.matrix,
+.qa-table {
+  width: 100%;
+  font-size: var(--text-sm);
+  border: 1px solid var(--color-border);
+}
+
+.matrix caption,
+.qa-table caption {
+  caption-side: bottom;
+  text-align: left;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  padding-top: var(--space-2);
+}
+
+.matrix th,
+.qa-table th {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  font-weight: var(--weight-semibold);
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 2px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.matrix td,
+.qa-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  vertical-align: top;
+}
+
+.matrix tbody tr:nth-child(even),
+.qa-table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-secondary);
+}
+
+.matrix tbody tr:hover,
+.qa-table tbody tr:hover {
+  background-color: var(--color-bg-surface);
+}
+
+.matrix td code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  color: var(--color-accent);
+}
+
+/* QA table has different column layout */
+.qa-table th:first-child {
+  width: 65%;
+}
+
+.qa-table td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
