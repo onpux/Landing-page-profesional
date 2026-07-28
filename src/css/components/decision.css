@@ -3,29 +3,23 @@
    Engineering Decisions accordion
    ======================================== */
 
-.decision-list {
+.decisions {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
 
-.decision-list__title {
-  font-size: var(--text-base);
-  font-weight: var(--weight-semibold);
-  color: var(--color-text-primary);
-  padding: var(--space-3) var(--space-4);
-  background-color: var(--color-bg-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-}
-
-.decision-list__item {
+.decision {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
 }
 
 .decision__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
@@ -33,6 +27,10 @@
   cursor: pointer;
   background-color: var(--color-bg-secondary);
   user-select: none;
+}
+
+.decision__title {
+  color: inherit;
 }
 
 .decision__summary:hover {
